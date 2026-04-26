@@ -2,7 +2,7 @@
 
 export default function Contact() {
   return (
-    <section className="py-24 px-6">
+    <section id="contact" className="py-24 px-6">
       <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
         Get In Touch
       </h2>

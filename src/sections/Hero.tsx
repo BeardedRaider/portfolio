@@ -6,7 +6,10 @@
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6"
+    >
       {/* Background gradient blob */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[600px] h-[600px] bg-gradient-to-br from-blue-300/40 via-purple-300/40 to-pink-300/40 rounded-full blur-3xl"></div>

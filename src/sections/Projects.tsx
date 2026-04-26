@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard";
 
 export default function Projects() {
   return (
-    <section className="py-24 px-6">
+    <section id="projects" className="py-24 px-6">
       <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
         Featured Projects
       </h2>
@@ -12,8 +12,18 @@ export default function Projects() {
       <div className="grid gap-10 md:grid-cols-2 max-w-6xl mx-auto">
         <ProjectCard
           title="Campus Safety App"
-          description="A full PWA with geolocation, camera API, admin dashboard, and real-time reporting."
-          tags={["React", "Tailwind", "Vite", "PWA"]}
+          description="A mobile-first PWA designed to improve student safety with real-time tracking, check-ins, emergency contacts, and geolocation features."
+          tags={[
+            "React",
+            "TypeScript",
+            "Tailwind",
+            "PWA",
+            "Camera API",
+            "Geolocation",
+          ]}
+          image="/src/assets/projects/campus/hero-desktop.jpg"
+          link="https://campus-safety-project.vercel.app"
+          github="https://github.com/BeardedRaider/Campus-Safety-Project.git"
         />
 
         <ProjectCard
