@@ -27,9 +27,13 @@ export default function Projects() {
         />
 
         <ProjectCard
-          title="Paisley Highland Games Website"
-          description="A modern responsive website built for a real client with clean UI and fast performance."
-          tags={["React", "Tailwind", "UI/UX"]}
+          title="Paisley Highland Games Web App"
+          description="A complete React + Tailwind web application designed to manage event information, competition registration, volunteer applications, and results for the fictional Paisley Highland Games.
+          Features include dynamic routing, mock API data, responsive UI, and a clean, modern design inspired by Scottish cultural heritage."
+          tags={["React", "Tailwind", "React Router", "UX/UI", "Mock APIs"]}
+          image="/src/assets/projects/highland/hero.jpeg"
+          link="https://paisleyhighlandgames.netlify.app" // optional
+          github="https://github.com/BeardedRaider/paisley-highland-games.git" // optional
         />
 
         <ProjectCard
