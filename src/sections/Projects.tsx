@@ -43,9 +43,12 @@ export default function Projects() {
         />
 
         <ProjectCard
-          title="Authentication System"
-          description="A complete login/register system with admin roles, protected routes, and CRUD operations."
-          tags={["React", "Node", "Auth"]}
+          title="SweetShop Laravel Web Application"
+          description="A full-stack Laravel application featuring authentication, role-based access, CRUD operations, product management, order tracking, and AWS deployment."
+          tags={["Laravel", "PHP", "MySQL", "Blade", "CRUD", "Auth", "AWS"]}
+          image="/src/assets/projects/sweetshop/ComingSoon.jpg"
+          link="https://your-sweetshop-demo-link.com" // optional
+          github="https://github.com/BeardedRaider/Sweet-Shop.git" // optional
         />
       </div>
     </section>
