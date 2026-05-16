@@ -1,6 +1,6 @@
 import { Code2, Palette, Briefcase, TrendingUp } from "lucide-react";
 import ValuePropCard from "./ValuePropCard";
-import { useInView } from "../../hooks/UseInView";
+import { useInView } from "../../hooks/useInView";
 
 export default function ValueProps() {
   const vp1 = useInView();

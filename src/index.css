@@ -45,3 +45,25 @@
 .vp-visible {
     animation: vpFadeSlideUp 0.8s ease-out forwards;
 }
+
+/* Tech stack animations */
+@keyframes techPopIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.tech-hidden {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+}
+
+.tech-visible {
+    animation: techPopIn 0.5s ease-out forwards;
+}
