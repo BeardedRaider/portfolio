@@ -5,3 +5,19 @@
 @tailwind utilities;
 /* stylelint-enable at-rule-no-unknown */
 /* Global styles will go here later */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-slide-up {
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease-out forwards;
+}

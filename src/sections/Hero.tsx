@@ -17,16 +17,25 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 text-center max-w-4xl">
-        <h1 className="text-6xl md:text-7xl mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent font-bold">
+        <h1
+          className="text-6xl md:text-7xl mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent font-bold fade-slide-up"
+          style={{ animationDelay: "0s" }}
+        >
           Shane Crossman
         </h1>
 
-        <p className="text-3xl md:text-4xl text-gray-700 mb-12">
+        <p
+          className="text-3xl md:text-4xl text-gray-700 mb-12 fade-slide-up"
+          style={{ animationDelay: "0.15s" }}
+        >
           Web & App Developer
         </p>
 
         {/* Buttons */}
-        <div className="flex gap-4 justify-center flex-wrap">
+        <div
+          className="flex gap-4 justify-center flex-wrap fade-slide-up"
+          style={{ animationDelay: "0.3s" }}
+        >
           <button className="px-8 py-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-gray-800 font-medium">
             View My Work
           </button>
