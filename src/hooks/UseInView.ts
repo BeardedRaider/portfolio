@@ -11,7 +11,7 @@ export function useInView(options?: IntersectionObserverInit) {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
-        observer.unobserve(element);
+        observer.unobserve(entry.target); // one-time animation
       }
     }, options);
 

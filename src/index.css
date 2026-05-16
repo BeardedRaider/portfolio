@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* stylelint-disable at-rule-no-unknown */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* stylelint-enable at-rule-no-unknown */
+
 /* Global styles will go here later */
 
 /* Fade Slide Up Animation hero */
@@ -46,24 +45,14 @@
     animation: vpFadeSlideUp 0.8s ease-out forwards;
 }
 
-/* Tech stack animations */
-@keyframes techPopIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8) translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
+/* Tech Stack Animations */
 .tech-hidden {
     opacity: 0;
     transform: scale(0.8) translateY(20px);
 }
 
 .tech-visible {
-    animation: techPopIn 0.5s ease-out forwards;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition: all 0.4s ease-out;
 }

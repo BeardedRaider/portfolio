@@ -1,5 +1,4 @@
 // src/sections/TechStack.tsx
-
 import { Atom, Code2, Wind, Server, Boxes, Database } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 
@@ -33,10 +32,10 @@ export default function TechStack() {
           <div
             key={tech.name}
             ref={triggers[i].ref}
-            className={`tech-hidden ${
-              triggers[i].isVisible ? "tech-visible" : ""
+            className={`${
+              triggers[i].isVisible ? "tech-visible" : "tech-hidden"
             } flex flex-col items-center gap-2 p-6 bg-white/70 backdrop-blur-md rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1`}
-            style={{ animationDelay: `${0.1 * (i + 1)}s` }}
+            style={{ transitionDelay: `${0.1 * (i + 1)}s` }}
           >
             <div className="text-4xl text-purple-600">{tech.icon}</div>
             <p className="text-gray-700 font-medium">{tech.name}</p>
