@@ -1,4 +1,5 @@
 // src/sections/About.tsx
+import ShanePhoto from "../assets/about/me.png";
 
 export default function About() {
   return (
@@ -10,8 +11,12 @@ export default function About() {
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Photo placeholder */}
         <div className="flex justify-center">
-          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 shadow-lg flex items-center justify-center text-gray-600 text-lg">
-            Photo
+          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 shadow-lg p-1">
+            <img
+              src={ShanePhoto}
+              alt="Shane Crossman"
+              className="w-full h-full rounded-full object-cover"
+            />
           </div>
         </div>
 
