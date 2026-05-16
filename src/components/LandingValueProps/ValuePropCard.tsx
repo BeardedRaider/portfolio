@@ -12,10 +12,14 @@ export default function ValuePropCard({
   description,
 }: ValuePropCardProps) {
   return (
-    <div className="bg-white/70 backdrop-blur-md rounded-xl shadow-md p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow">
-      <div className="text-purple-600">{icon}</div>
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
+    <div className="bg-white/70 backdrop-blur-md rounded-xl shadow-md p-6 flex flex-col h-full">
+      <div className="text-purple-600 mb-4">{icon}</div>
+
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+
+      <p className="text-gray-700 text-sm leading-relaxed flex-1">
+        {description}
+      </p>
     </div>
   );
 }

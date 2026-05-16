@@ -5,6 +5,8 @@
 @tailwind utilities;
 /* stylelint-enable at-rule-no-unknown */
 /* Global styles will go here later */
+
+/* Fade Slide Up Animation hero */
 @keyframes fadeSlideUp {
     0% {
         opacity: 0;
@@ -20,4 +22,26 @@
 .fade-slide-up {
     opacity: 0;
     animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+/* // Value Props specific animations */
+@keyframes vpFadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vp-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.vp-visible {
+    animation: vpFadeSlideUp 0.8s ease-out forwards;
 }
