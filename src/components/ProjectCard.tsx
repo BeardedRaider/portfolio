@@ -8,6 +8,7 @@ interface ProjectCardProps {
   image?: string;
   link?: string;
   github?: string;
+  imageClassName?: string;
 }
 
 export default function ProjectCard({
@@ -17,13 +18,18 @@ export default function ProjectCard({
   image,
   link,
   github,
+  imageClassName,
 }: ProjectCardProps) {
   return (
     <div className="bg-white/70 backdrop-blur-md rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1 overflow-hidden">
       {/* Screenshot */}
       <div className="h-64 bg-gray-200 flex items-center justify-center">
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className={`w-full h-full object-cover ${imageClassName || ""}`}
+          />
         ) : (
           <span className="opacity-60">No Image</span>
         )}

@@ -32,14 +32,22 @@ export default function Projects() {
           Features include dynamic routing, mock API data, responsive UI, and a clean, modern design inspired by Scottish cultural heritage."
           tags={["React", "Tailwind", "React Router", "UX/UI", "Mock APIs"]}
           image="/src/assets/projects/highland/hero.jpeg"
-          link="https://paisleyhighlandgames.netlify.app" // optional
-          github="https://github.com/BeardedRaider/paisley-highland-games.git" // optional
+          link="https://paisleyhighlandgames.netlify.app"
+          github="https://github.com/BeardedRaider/paisley-highland-games.git"
         />
 
         <ProjectCard
-          title="CSS Framework Dissertation"
-          description="A full research project comparing modern CSS frameworks with real-world testing."
-          tags={["Research", "CSS", "UI/UX"]}
+          title="My Development Journey — 2022 to 2026"
+          description="A side-by-side comparison of my first ever website and one of my modern React builds, showing how my skills have evolved across design, development, and UX."
+          tags={[
+            "Growth",
+            "Before/After",
+            "Web Development",
+            "Learning Journey",
+          ]}
+          image="/src/assets/projects/growth/cropped2.jpg"
+          link="https://bikekingboarders.netlify.app/"
+          imageClassName="object-center"
         />
 
         <ProjectCard
@@ -47,8 +55,8 @@ export default function Projects() {
           description="A full-stack Laravel application featuring authentication, role-based access, CRUD operations, product management, order tracking, and AWS deployment."
           tags={["Laravel", "PHP", "MySQL", "Blade", "CRUD", "Auth", "AWS"]}
           image="/src/assets/projects/sweetshop/ComingSoon.jpg"
-          link="https://your-sweetshop-demo-link.com" // optional
-          github="https://github.com/BeardedRaider/Sweet-Shop.git" // optional
+          link="https://your-sweetshop-demo-link.com"
+          github="https://github.com/BeardedRaider/Sweet-Shop.git"
         />
       </div>
     </section>
