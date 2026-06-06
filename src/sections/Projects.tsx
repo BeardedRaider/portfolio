@@ -1,15 +1,23 @@
 // src/sections/Projects.tsx
 
 import ProjectCard from "../components/ProjectCard";
+import { useInView } from "../hooks/useInView";
 
 export default function Projects() {
+  const grid = useInView();
+
   return (
     <section id="projects" className="py-24 px-6">
       <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
         Featured Projects
       </h2>
 
-      <div className="grid gap-10 md:grid-cols-2 max-w-6xl mx-auto">
+      <div
+        ref={grid.ref}
+        className={`grid gap-10 md:grid-cols-2 max-w-6xl mx-auto transition-opacity duration-[1200ms] ${
+          grid.isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <ProjectCard
           title="Campus Safety App"
           description="A mobile-first PWA designed to improve student safety with real-time tracking, check-ins, emergency contacts, and geolocation features."
