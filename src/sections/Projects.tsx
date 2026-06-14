@@ -1,7 +1,7 @@
 // src/sections/Projects.tsx
 
 import ProjectCard from "../components/ProjectCard";
-import { useInView } from "../hooks/temp";
+import { useInView } from "../hooks/useInView";
 
 export default function Projects() {
   const grid = useInView();
