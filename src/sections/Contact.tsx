@@ -2,15 +2,24 @@
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+    <section id="contact" className="relative py-24 px-6 overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[500px] h-[500px] bg-gradient-to-br from-blue-300/30 via-purple-300/30 to-pink-300/30 rounded-full blur-3xl"></div>
+      </div>
+
+      <h2 className="relative z-10 text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent fade-slide-up">
         Get In Touch
       </h2>
 
-      <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-md p-10 rounded-2xl shadow-lg">
+      <div
+        className="relative z-10 max-w-3xl mx-auto bg-white/70 backdrop-blur-md p-10 rounded-2xl shadow-lg fade-slide-up"
+        style={{ animationDelay: "0.15s" }}
+      >
         <p className="text-gray-700 text-lg mb-8 text-center">
-          Whether you want to discuss a project, collaborate, or just say hello
-          — I’d love to hear from you.
+          Whether you want to discuss a project, explore a collaboration, or
+          you’re looking to hire a dedicated developer — I’d love to hear from
+          you.
         </p>
 
         <form className="grid gap-6">
@@ -41,15 +50,22 @@ export default function Contact() {
         </form>
 
         {/* Social links */}
-        <div className="mt-12 flex justify-center gap-6 text-gray-700">
-          <a href="#" className="hover:text-purple-600 transition">
-            LinkedIn
+        <div
+          className="mt-12 flex justify-center gap-8 text-gray-700 fade-slide-up"
+          style={{ animationDelay: "0.3s" }}
+        >
+          <a
+            href="https://linkedin.com"
+            className="hover:text-purple-600 transition flex items-center gap-2"
+          >
+            <span>LinkedIn</span>
           </a>
-          <a href="#" className="hover:text-purple-600 transition">
-            GitHub
-          </a>
-          <a href="#" className="hover:text-purple-600 transition">
-            Email
+
+          <a
+            href="https://github.com/BeardedRaider"
+            className="hover:text-purple-600 transition flex items-center gap-2"
+          >
+            <span>GitHub</span>
           </a>
         </div>
       </div>
