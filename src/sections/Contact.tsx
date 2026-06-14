@@ -21,18 +21,29 @@ export default function Contact() {
 
   // --- Handle form submission ---
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent page refresh
+    e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulated sending delay (replace with real API later)
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      resetForm(); // Clear form after success
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-      // Auto-hide success message
-      setTimeout(() => setIsSuccess(false), 4000);
-    }, 1500);
+      const data = await res.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        resetForm();
+        setTimeout(() => setIsSuccess(false), 4000);
+      } else {
+        alert("Something went wrong sending your message.");
+      }
+    } catch (err) {
+      alert("Network error — please try again.");
+    }
+    setIsSubmitting(false);
   };
 
   return (
