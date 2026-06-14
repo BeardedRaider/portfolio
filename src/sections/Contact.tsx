@@ -27,9 +27,15 @@ export default function Contact() {
     try {
       const formData = new FormData();
       formData.append("access_key", "93d71562-cac2-4e5f-a02c-f40ce2b6d115");
+
+      // Required fields
       formData.append("name", name);
       formData.append("email", email);
       formData.append("message", message);
+
+      // Web3Forms REQUIRED aliases (fixes your 400 error)
+      formData.append("from_name", name);
+      formData.append("from_email", email);
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
