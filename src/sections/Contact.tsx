@@ -7,17 +7,30 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Controlled input state
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  // Reset form fields after successful send
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
   // --- Handle form submission ---
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent page refresh
     setIsSubmitting(true);
 
-    // Simulate sending (replace with real API later)
+    // Simulated sending delay (replace with real API later)
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
+      resetForm(); // Clear form after success
 
-      // Auto-hide success after 4 seconds
+      // Auto-hide success message
       setTimeout(() => setIsSuccess(false), 4000);
     }, 1500);
   };
@@ -29,6 +42,7 @@ export default function Contact() {
         <div className="w-[500px] h-[500px] bg-gradient-to-br from-blue-300/30 via-purple-300/30 to-pink-300/30 rounded-full blur-3xl"></div>
       </div>
 
+      {/* Section heading */}
       <h2 className="relative z-10 text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent fade-slide-up">
         Get In Touch
       </h2>
@@ -44,17 +58,20 @@ export default function Contact() {
             </div>
           )}
 
+          {/* Intro text */}
           <p className="text-gray-700 text-lg mb-8 text-center">
             Whether you want to discuss a project, collaborate, or you’re
             looking to hire a dedicated developer — I’d love to hear from you.
           </p>
 
-          {/* Form */}
+          {/* Contact form */}
           <form className="grid gap-6" onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Your Name"
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
             />
 
@@ -62,6 +79,8 @@ export default function Contact() {
               type="email"
               placeholder="Your Email"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
             />
 
@@ -69,9 +88,12 @@ export default function Contact() {
               placeholder="Your Message"
               rows={5}
               required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
             ></textarea>
 
+            {/* Submit button */}
             <button
               type="submit"
               disabled={isSubmitting}
@@ -91,6 +113,7 @@ export default function Contact() {
             className="mt-12 flex justify-center gap-8 text-gray-700 fade-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
+            {/* LinkedIn */}
             <a
               href="https://linkedin.com"
               target="_blank"
@@ -108,6 +131,7 @@ export default function Contact() {
               <span className="font-medium">LinkedIn</span>
             </a>
 
+            {/* GitHub */}
             <a
               href="https://github.com/BeardedRaider"
               target="_blank"
