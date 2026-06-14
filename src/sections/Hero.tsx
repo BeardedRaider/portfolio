@@ -36,11 +36,25 @@ export default function Hero() {
           className="flex gap-4 justify-center flex-wrap fade-slide-up"
           style={{ animationDelay: "0.3s" }}
         >
-          <button className="px-8 py-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-gray-800 font-medium">
+          <button
+            onClick={() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-gray-800 font-medium"
+          >
             View My Work
           </button>
 
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 font-medium">
+          <button
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 font-medium"
+          >
             Get In Touch
           </button>
         </div>
