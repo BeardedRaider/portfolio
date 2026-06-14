@@ -2,6 +2,10 @@
 
 import ProjectCard from "../components/ProjectCard";
 import { useInView } from "../hooks/useInView";
+import campusHero from "../assets/projects/campus/hero-desktop.jpg";
+import highlandHero from "../assets/projects/highland/hero.jpeg";
+import growthHero from "../assets/projects/growth/cropped2.jpg";
+import sweetshopHero from "../assets/projects/sweetshop/ComingSoon.jpg";
 
 export default function Projects() {
   const grid = useInView();
@@ -29,7 +33,7 @@ export default function Projects() {
             "Camera API",
             "Geolocation",
           ]}
-          image="/src/assets/projects/campus/hero-desktop.jpg"
+          image={campusHero}
           link="https://campus-safety-project.vercel.app"
           github="https://github.com/BeardedRaider/Campus-Safety-Project.git"
         />
@@ -39,7 +43,7 @@ export default function Projects() {
           description="A complete React + Tailwind web application designed to manage event information, competition registration, volunteer applications, and results for the fictional Paisley Highland Games.
           Features include dynamic routing, mock API data, responsive UI, and a clean, modern design inspired by Scottish cultural heritage."
           tags={["React", "Tailwind", "React Router", "UX/UI", "Mock APIs"]}
-          image="/src/assets/projects/highland/hero.jpeg"
+          image={highlandHero}
           link="https://paisleyhighlandgames.netlify.app"
           github="https://github.com/BeardedRaider/paisley-highland-games.git"
         />
@@ -53,7 +57,7 @@ export default function Projects() {
             "Web Development",
             "Learning Journey",
           ]}
-          image="/src/assets/projects/growth/cropped2.jpg"
+          image={growthHero}
           link="https://bikekingboarders.netlify.app/"
           imageClassName="object-center"
         />
@@ -62,7 +66,7 @@ export default function Projects() {
           title="SweetShop Laravel Web Application"
           description="A full-stack Laravel application featuring authentication, role-based access, CRUD operations, product management, order tracking, and AWS deployment."
           tags={["Laravel", "PHP", "MySQL", "Blade", "CRUD", "Auth", "AWS"]}
-          image="/src/assets/projects/sweetshop/ComingSoon.jpg"
+          image={sweetshopHero}
           link="https://your-sweetshop-demo-link.com"
           github="https://github.com/BeardedRaider/Sweet-Shop.git"
         />
