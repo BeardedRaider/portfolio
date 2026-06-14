@@ -1,13 +1,10 @@
 // /api/send-email.ts
 import { Resend } from "resend";
 
-export const config = {
-  runtime: "nodejs",
-};
+export const runtime = "nodejs"; // modern Vercel runtime flag
 
 export default async function handler(req: Request): Promise<Response> {
   try {
-    // Type the JSON body so TS knows what fields exist
     const body = (await req.json()) as {
       name: string;
       email: string;
