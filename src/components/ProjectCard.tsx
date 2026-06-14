@@ -9,6 +9,7 @@ interface ProjectCardProps {
   link?: string;
   github?: string;
   imageClassName?: string;
+  extraLinks?: { label: string; url: string }[]; // Optional additional links
 }
 
 export default function ProjectCard({
@@ -19,6 +20,7 @@ export default function ProjectCard({
   link,
   github,
   imageClassName,
+  extraLinks, // ⭐ You forgot to destructure this — added safely
 }: ProjectCardProps) {
   return (
     <div className="bg-white/70 backdrop-blur-md rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1 overflow-hidden">
@@ -50,24 +52,41 @@ export default function ProjectCard({
           ))}
         </div>
 
+        {/* ⭐ UPDATED BUTTON LOGIC — NOTHING ELSE CHANGED */}
         <div className="flex gap-4">
-          {link && (
-            <a
-              href={link}
-              target="_blank"
-              className="px-6 py-2 bg-white rounded-full shadow hover:shadow-md transition-all text-gray-800 font-medium"
-            >
-              Live Demo
-            </a>
-          )}
-          {github && (
-            <a
-              href={github}
-              target="_blank"
-              className="px-6 py-2 bg-white rounded-full shadow hover:shadow-md transition-all text-gray-800 font-medium"
-            >
-              GitHub
-            </a>
+          {extraLinks ? (
+            // Render multiple custom buttons
+            extraLinks.map((item, index) => (
+              <a
+                key={index}
+                href={item.url}
+                target="_blank"
+                className="px-6 py-2 bg-white rounded-full shadow hover:shadow-md transition-all text-gray-800 font-medium"
+              >
+                {item.label}
+              </a>
+            ))
+          ) : (
+            <>
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  className="px-6 py-2 bg-white rounded-full shadow hover:shadow-md transition-all text-gray-800 font-medium"
+                >
+                  Live Demo
+                </a>
+              )}
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  className="px-6 py-2 bg-white rounded-full shadow hover:shadow-md transition-all text-gray-800 font-medium"
+                >
+                  GitHub
+                </a>
+              )}
+            </>
           )}
         </div>
       </div>

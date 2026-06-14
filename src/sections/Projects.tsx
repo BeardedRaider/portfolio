@@ -58,17 +58,26 @@ export default function Projects() {
             "Learning Journey",
           ]}
           image={growthHero}
-          link="https://bikekingboarders.netlify.app/"
           imageClassName="object-center"
+          extraLinks={[
+            {
+              label: "Bike King Borders",
+              url: "https://bikekingboarders.netlify.app/",
+            },
+            {
+              label: "Paisley Highland Games",
+              url: "https://paisleyhighlandgames.netlify.app",
+            },
+          ]}
         />
 
         <ProjectCard
-          title="SweetShop Laravel Web Application"
-          description="A full-stack Laravel application featuring authentication, role-based access, CRUD operations, product management, order tracking, and AWS deployment."
-          tags={["Laravel", "PHP", "MySQL", "Blade", "CRUD", "Auth", "AWS"]}
+          title="Next Project Launching Soon"
+          description="I’m currently designing and developing my next major portfolio project. This slot will be updated once the build reaches its first milestone."
+          tags={["In Progress", "Full‑Stack", "Coming Soon"]}
           image={sweetshopHero}
-          link="https://your-sweetshop-demo-link.com"
-          github="https://github.com/BeardedRaider/Sweet-Shop.git"
+          link={undefined}
+          github={undefined}
         />
       </div>
     </section>
