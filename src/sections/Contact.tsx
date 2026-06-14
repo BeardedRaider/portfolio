@@ -25,10 +25,15 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/send-email", {
+      const formData = new FormData();
+      formData.append("access_key", "93d71562-cac2-4e5f-a02c-f40ce2b6d115");
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("message", message);
+
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: formData,
       });
 
       const data = await res.json();
@@ -43,6 +48,7 @@ export default function Contact() {
     } catch (err) {
       alert("Network error — please try again.");
     }
+
     setIsSubmitting(false);
   };
 
