@@ -17,6 +17,11 @@ export default function Contact() {
     setName("");
     setEmail("");
     setMessage("");
+
+    // Reset hCaptcha widget
+    if ((window as any).hcaptcha) {
+      (window as any).hcaptcha.reset();
+    }
   };
 
   // --- Handle form submission ---
@@ -33,9 +38,13 @@ export default function Contact() {
       formData.append("email", email);
       formData.append("message", message);
 
-      // Web3Forms REQUIRED aliases (fixes your 400 error)
+      // Web3Forms REQUIRED aliases
       formData.append("from_name", name);
       formData.append("from_email", email);
+
+      // --- hCaptcha token (required for spam protection) ---
+      const token = (window as any).hcaptcha?.getResponse();
+      formData.append("h-captcha-response", token || "");
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -115,6 +124,9 @@ export default function Contact() {
               onChange={(e) => setMessage(e.target.value)}
               className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
             ></textarea>
+
+            {/* --- hCaptcha widget (required) --- */}
+            <div className="h-captcha" data-captcha="true"></div>
 
             {/* Submit button */}
             <button
